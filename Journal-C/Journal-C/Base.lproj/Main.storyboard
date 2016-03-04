@@ -102,6 +102,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="zKI-ZM-B5o" kind="show" identifier="toEditEntry" id="cfC-xJ-6fL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -112,7 +115,7 @@
                     <navigationItem key="navigationItem" id="cDT-xA-sBI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="p7B-GB-i47">
                             <connections>
-                                <segue destination="zKI-ZM-B5o" kind="show" id="gpy-zf-fWj"/>
+                                <segue destination="zKI-ZM-B5o" kind="show" identifier="toAddEntry" id="gpy-zf-fWj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,4 +143,7 @@
             <point key="canvasLocation" x="619" y="390"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gpy-zf-fWj"/>
+    </inferredMetricsTieBreakers>
 </document>

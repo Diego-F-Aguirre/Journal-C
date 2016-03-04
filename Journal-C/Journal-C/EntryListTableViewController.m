@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self.tableView reloadData];
 }
 
 
@@ -61,6 +61,22 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    if ([segue.identifier isEqualToString: @"toEditEntry"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
+        
+        EntryDetailViewController *detailViewController = segue.destinationViewController;
+        
+        [detailViewController updateWithEntry:entry];
+        
+        detailViewController.entry = entry;
+        
+    } else if ([segue.identifier isEqualToString:@"toAddEntry"]) {
+        EntryDetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.entry = nil;
+        
+    }
 }
 
 

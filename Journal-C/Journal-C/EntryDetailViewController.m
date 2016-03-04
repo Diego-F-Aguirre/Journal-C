@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 
-@property (strong, nonatomic) Entry *entry;
+
 
 @end
 
@@ -27,6 +27,13 @@
     self.bodyTextView.delegate = self;
 }
 
+- (void)updateWithEntry:(Entry *)entry {
+    
+    if (entry) {
+        self.titleTextField.text = self.entry.title;
+        self.bodyTextView.text = self.entry.bodyText;
+    }
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     

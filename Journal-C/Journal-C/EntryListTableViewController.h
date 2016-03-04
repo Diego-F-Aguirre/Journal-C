@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EntryController.h"
+#import "EntryDetailViewController.h"
 
 @interface EntryListTableViewController : UITableViewController
 

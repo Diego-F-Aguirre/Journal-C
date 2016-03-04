@@ -11,4 +11,8 @@
 
 @interface EntryDetailViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
+@property (strong, nonatomic) Entry *entry;
+
+- (void)updateWithEntry: (Entry *)entry;
+
 @end
