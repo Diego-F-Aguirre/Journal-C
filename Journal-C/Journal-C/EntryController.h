@@ -16,6 +16,8 @@
 - (void)addEntry:(Entry *)entry;
 - (void)deleteEntry:(Entry *)entry;
 
+- (void)saveToPersistentStorage;
+
 + (EntryController *)sharedInstance;
 
 @end

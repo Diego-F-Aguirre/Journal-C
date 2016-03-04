@@ -14,6 +14,10 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *bodyText;
 
+@property (copy, nonatomic) NSDictionary *dictionaryCopy;
+
 - (instancetype)initWithTitle:(NSString *)title bodyText:(NSString *)bodyTitle timestamp:(NSDate *)timestamp;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 
 @end

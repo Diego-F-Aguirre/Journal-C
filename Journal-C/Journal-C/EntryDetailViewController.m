@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 
+@property (strong, nonatomic) Entry *entry;
+
 @end
 
 @implementation EntryDetailViewController
@@ -52,6 +54,20 @@
     
     self.titleTextField.text = @"";
     self.bodyTextView.text = @"";
+}
+
+
+- (IBAction)saveButtonPressed:(id)sender {
+
+    
+    if (self.titleTextField.text && self.bodyTextView.text) {
+        
+        [[EntryController sharedInstance] addEntry:self.entry];
+    }
+//    if (self.titleTextField.text > 0) {
+//        
+//        [[EntryController sharedInstance] saveToPersistentStorage];
+//    }
 }
 
 /*

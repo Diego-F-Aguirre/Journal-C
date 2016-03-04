@@ -10,13 +10,6 @@
 
 @implementation EntryController
 
-- (void)addEntry:(Entry *)entry {
-    
-}
-
-- (void)deleteEntry:(Entry *)entry {
-    
-}
 
 + (EntryController *)sharedInstance {
     
@@ -27,6 +20,26 @@
     });
     
     return sharedInstance;
+}
+
+
+- (void)addEntry:(Entry *)entry {
+    [[EntryController sharedInstance].entries addObject:entry];
+}
+
+- (void)deleteEntry:(Entry *)entry {
+    [[EntryController sharedInstance].entries removeObject:entry];
+}
+
+
+- (void)saveToPersistentStorage {
+    
+    NSMutableArray *entryDictionaries = [NSMutableArray new];
+    
+    for (Entry *entry in self.entries) {
+        
+        [entryDictionaries addObject:entry];
+    }
 }
 
 @end

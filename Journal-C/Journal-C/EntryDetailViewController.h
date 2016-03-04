@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EntryController.h"
 
 @interface EntryDetailViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
