@@ -60,14 +60,18 @@
 - (IBAction)saveButtonPressed:(id)sender {
 
     
-    if (self.titleTextField.text && self.bodyTextView.text) {
+    if (self.entry) {
+        self.entry.title = self.titleTextField.text;
+        self.entry.bodyText = self.bodyTextView.text;
+        self.entry.timestamp = [NSDate date];
+    } else {
         
-        [[EntryController sharedInstance] addEntry:self.entry];
+        Entry *entry = [[Entry alloc] initWithTitle:self.titleTextField.text bodyText:self.bodyTextView.text timestamp:[NSDate date]];
+        
+        [[EntryController sharedInstance] addEntry: entry];
     }
-//    if (self.titleTextField.text > 0) {
-//        
-//        [[EntryController sharedInstance] saveToPersistentStorage];
-//    }
+
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 /*
